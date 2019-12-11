@@ -3,6 +3,8 @@ class Replace
     @initial_string = initial_string.downcase
   end
   def replace(find, replace)
+    find = find.downcase
+    replace = replace.downcase
     initial_array = @initial_string.split(" ")
     indicies = []
     if initial_array.include? find
@@ -17,22 +19,11 @@ class Replace
         initial_array.insert(find_index, replace)
         puts find_index
       end
-      initial_array.join(" ")
+      initial_array.join(" ").capitalize
     else
-      "does not include string"
+      "#{@initial_string.chomp} does not include string '#{find}'"
 
     end
 
   end
 end
-
-# def replace(pattern)
-#   pattern_tally = find()
-#   pattern_tally.times() do
-#     @input.slice! pattern
-#   end
-#   @input
-# end
-# def find
-#   @input
-# end

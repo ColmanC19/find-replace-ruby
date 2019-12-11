@@ -11,7 +11,7 @@ describe('#find_replace') do
     expect(new_replace.replace("chickens", "birds")).to(eq("does not include string"))
   end
   it('removes user_input from initial_string') do
-    new_replace = Replace.new("cats and cats and cats or cats")
-    expect(new_replace.replace("cats", "birds")).to(eq("birds and birds and birds or birds"))
+    new_replace = Replace.new("Cats and cats and cats or cats")
+    expect(new_replace.replace("cats", "birds")).to(eq("Birds and birds and birds or birds"))
   end
 end
